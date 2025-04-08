@@ -6,6 +6,7 @@ import re
 
 import bson
 from bson.objectid import ObjectId
+from bson.decimal128 import Decimal128
 
 from .logger import logger
 
@@ -23,6 +24,8 @@ def get_dtype(value):
         return "ObjectId"
     elif isinstance(value, int) and type(value) != bool:
         return _get_int(value)
+    elif isinstance(value, Decimal128):
+        return "decimal128"
     mapper= {
             bool: "bool",
             datetime.date: "Date",
