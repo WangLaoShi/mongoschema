@@ -5,9 +5,9 @@ def test_mongodb_connection():
     try:
         # 创建MongoDB客户端连接（添加认证信息）
         client = MongoClient(
-            'mongodb://192.168.0.5:27017',
+            'mongodb://localhost:27017',
             username='root',  # 替换为实际的用户名
-            password='123456',    # 替换为实际的密码
+            password='root',    # 替换为实际的密码
             serverSelectionTimeoutMS=5000
         )
         
